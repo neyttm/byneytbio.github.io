@@ -1,0 +1,530 @@
+# byneytbio.github.io
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imamov Abdulloh | Биография</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1b2d 0%, #25273b 100%);
+            color: #F5F5F5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #6C63FF, #4A40E5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .profile-img i {
+            font-size: 5rem;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #6C63FF, #4A40E5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #D6DEE6;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(135deg, #6C63FF, #4A40E5);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: #D6DEE6;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            color: rgba(245, 245, 245, 0.9);
+        }
+
+        .glass {
+            background: rgba(26, 27, 45, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(74, 64, 229, 0.1));
+            z-index: -1;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .goal {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(74, 64, 229, 0.15));
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .goal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.25), rgba(74, 64, 229, 0.25));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .goal:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .goal:hover::before {
+            opacity: 1;
+        }
+
+        .goal i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6C63FF;
+            transition: all 0.5s ease;
+        }
+
+        .goal:hover i {
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        .goal h3 {
+            transition: all 0.5s ease;
+        }
+
+        .goal:hover h3 {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(74, 64, 229, 0.2));
+            color: #6C63FF;
+            font-size: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6C63FF, #4A40E5);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #6C63FF, #4A40E5);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #4A40E5, #6C63FF);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .discord-info {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .discord-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .discord-tag {
+            font-weight: bold;
+            color: #6C63FF;
+            font-size: 1.2rem;
+        }
+
+        .blur-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        .circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: #6C63FF;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+
+        .circle:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            background: #4A40E5;
+            top: 50%;
+            right: 10%;
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+
+        .circle:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            background: #25273b;
+            bottom: 10%;
+            left: 20%;
+            animation-delay: -10s;
+            animation-duration: 25s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 40px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 80px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-20px, 40px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(245, 245, 245, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .glass {
+                padding: 1.5rem;
+            }
+            
+            .goals {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Абдуллох Имамов</h1>
+            <p>Бухгалтер и IT-специалист из Ташкента</p>
+            <a href="#contact" class="button">Связаться со мной</a>
+        </header>
+
+        <div class="glass">
+            <h2>Основная информация</h2>
+            <p>Меня зовут Абдуллох Имамов. Я живу в Ташкенте. Моя жизнь была полна испытаний, которые закалили мой характер и сделали меня сильнее. Сегодня я совмещаю интерес к IT с реальной работой — я уже занимаюсь бухгалтерией, что помогает мне быть организованным, внимательным к деталям и ответственным.</p>
+        </div>
+
+        <div class="glass">
+            <h2>Мои интересы</h2>
+            <p>Со временем я нашёл своё настоящее направление — IT и технологии.</p>
+            
+            <h3>HTML и веб-разработка</h3>
+            <p>Мне нравится создавать сайты и изучать структуру интернета.</p>
+            
+            <h3>Termux и софты</h3>
+            <p>Я интересуюсь разработкой и тестированием утилит, которые могут применяться в мобильных системах, в том числе нестандартного назначения.</p>
+            
+            <h3>Программирование и инструменты</h3>
+            <p>Для меня это не просто хобби, а путь, в котором я хочу развиваться и реализовывать свои идеи.</p>
+        </div>
+
+        <div class="glass">
+            <h2>Профессиональная деятельность</h2>
+            <p>Помимо IT я также работаю бухгалтером. Эта сфера требует точности, внимательности и умения разбираться в деталях. Опыт в бухгалтерии помогает мне быть более организованным, структурным и ответственным.</p>
+        </div>
+
+        <div class="glass">
+            <h2>Мои особенности</h2>
+            <div class="skills">
+                <div class="skill">Закалённый характер</div>
+                <div class="skill">Дисциплина</div>
+                <div class="skill">Общительность</div>
+                <div class="skill">Практичность</div>
+                <div class="skill">Аналитический подход</div>
+            </div>
+        </div>
+
+        <div class="glass">
+            <h2>Цели</h2>
+            <p>Я хочу развиваться в сфере IT, изучать языки программирования, создавать собственные софты и проекты. В будущем для меня важно объединить мой опыт дисциплины, бухгалтерии и технических знаний, чтобы создавать полезные решения и двигаться к большим результатам.</p>
+            
+            <div class="goals">
+                <div class="goal">
+                    <i class="fas fa-code"></i>
+                    <h3>Развитие в IT</h3>
+                    <p>Изучение языков программирования и создание собственных проектов</p>
+                </div>
+                <div class="goal">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Объединение опыта</h3>
+                    <p>Совмещение знаний в бухгалтерии и IT для создания полезных решений</p>
+                </div>
+                <div class="goal">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Достижение результатов</h3>
+                    <p>Создание востребованных продуктов и движение к большим целям</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass" id="contact">
+            <h2>Социальные сети</h2>
+            <p>Вы можете найти меня в следующих социальных сетях:</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/neyt_tm" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://steamcommunity.com/id/neyt_tm" class="social-link" target="_blank">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="https://t.me/neyt_tm" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://discordapp.com/users/neyt_tm" class="social-link" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.tiktok.com/@neyt_tm" class="social-link" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://github.com/neyttm" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+     
+
+    <footer>
+        <p>Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Добавляем плавное появление элементов при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const glassElements = document.querySelectorAll('.glass');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            glassElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html> 
